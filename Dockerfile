@@ -7,6 +7,7 @@ RUN pacman --noconfirm --needed -Syu distcc gcc clang \
     && rm -rf /var/cache/pacman/pkg/*
 
 COPY entrypoint.sh /entrypoint.sh
+RUN ["chmod", "+x", "/entrypoint.sh"]
 
 EXPOSE 3632
 ENTRYPOINT ["/entrypoint.sh"]
